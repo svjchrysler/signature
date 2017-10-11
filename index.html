@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="567" height="242"></canvas>
+
+    <a href="" id="download">Descargar</a>
+
+
+    <script async>
+        var canvas = document.getElementById('canvas')
+
+
+            let ctx = canvas.getContext('2d')
+            let img = new Image()
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0)
+                ctx.font = '20px serif'
+                ctx.fillText('Jhon Salguero', 55 ,50)
+                ctx.font = '14px serif'
+                ctx.fillText('Programador Web', 55 ,70)
+
+                ctx.fillText('Av. Cristo Redentor #777', 55 ,100)
+
+                ctx.fillText('Santa Cruz de la Sierra, Bolivia', 55 ,115)
+
+                ctx.fillText('Telf.: +591-3-342 5227', 55 ,130)
+
+                ctx.fillText('Cel.: +591-789 97787', 55 ,145)
+
+                ctx.fillText('E-mail: jhon.salguero@toyosa.com', 55 ,160)
+
+                download()
+            }
+
+            img.src = './firma.jpg'
+        
+
+
+        function download() {
+            console.log("sdfsdfsdf")
+            let urlImage = canvas.toDataURL('image/png', 1.0).replace("image/png", "image/octet-stream")
+            let download = document.getElementById("download")
+            download.setAttribute("href", urlImage);
+            /* window.location = urlImage */
+            /* console.log("image", urlImage) */
+        }
+
+        /* ctx.drawImage(document.getElementById) */
+    </script>
+</body>
+</html>
